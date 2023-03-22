@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function validatePassword(){
+    document.getElementById('passworddiv').innerHTML="";
+    let pwd = document.getElementById('password');
+
+    if(pwd.value.length<=7){
+        document.getElementById('passworddiv').innerHTML="Minimum 8 characters needed";
+        return false;
+    }
+    else
+        return true;
+}
+
+function validatePasswordCF(){
+    document.getElementById('passwordAgaindiv').innerHTML="";
+    let pwdCF = document.getElementById('passwordAgain');
+    let pwd = document.getElementById('password');
+
+    if(pwdCF.value != pwd.value){
+        document.getElementById('passwordAgaindiv').innerHTML="Password mismatch";
+        return false;
+    }
+    else
+        return true;
+}
+
+
+function validateForm(){
+    if( validatePassword() && validatePasswordCF()){
+        return true;
+    }
+    else
+    return false;
+}
+</script>
+</head>
+<body>
+	<section>
+	<th:block th:if="${session.msg}">
+                			<div class="alert alert-danger" role="alert">
+ [[${session.msg}]]
+</div>
+							<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+				</th:block>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col">
+            <div class="card card-registration my-4">
+              <div class="row g-0">
+                <div class="col-xl-6 d-none d-xl-block">
+                  <img
+                    src="./Image/valentin-salja-9kbaq1xoIr0-unsplash.jpg"
+                    alt="Sample photo"
+                    class="img-fluid"
+                    style="
+                      border-top-left-radius: 0.25rem;
+                      border-bottom-left-radius: 0.25rem;
+                    "
+                  />
+                </div>
+               <div class="col-xl-6">  
+              <div class="card-body p-md-5 text-black">  
+                <h3 class="mb-5 text-uppercase"> Register</h3> 
+                <form action="register" method="post" class="mr-3">
+                  <div class="row mt-5">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          name="fname"
+                          id="form3Example1m"
+                          class="form-control form-control-lg"
+                        	required="required"
+                        />
+                        <label class="form-label" for="form3Example1m">
+                          First name
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          name="lname"
+                          id="form3Example1n"
+                          class="form-control form-control-lg"
+                        	required="required"
+                        />
+                        <label class="form-label" for="form3Example1n">
+                          Last name
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="password"
+                          id="password"
+                          name="upass"
+                          class="form-control form-control-lg"
+                          required="required"
+                           onkeyup="validatePassword()"
+                        />
+                        <label class="form-label" for="form3Example1m1">
+                          Password
+                        </label>
+                        <div class="errorMsg" id="passworddiv"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                        name="cpass"
+                          type="password"
+                          id="passwordAgain"
+                          class="form-control form-control-lg"
+                          required="required"
+                       onkeyup="validatePasswordCF()"
+                        />
+                        <label class="form-label" for="form3Example1n1"
+                          >Confirm Password</label
+                        >
+                        <div class="errorMsg" id="passwordAgaindiv"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="date"
+                      id="form3Example9"
+                      name="dob"
+                      class="form-control form-control-lg"
+                      required="required"
+                    />
+                    <label class="form-label" for="form3Example9">
+                      Date of Birth
+                    </label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="form3Example8"
+                      name="mobile_no"
+                      class="form-control form-control-lg"
+                      required="required"
+                    />
+                    <label class="form-label" for="form3Example8">
+                      Phone Number
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline mb-0 me-4 d-md-flex justify-content-start align-items-center mb-4 py-2">
+                    <h6>Gender : </h6>
+                    <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="otherGender"
+                    value="Male"
+                    required="required"
+                  />
+                  <label class="form-check-label" for="otherGender">
+                    Male
+                  </label>
+            <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="otherGender"
+                    value="Female"
+                    required="required"
+                  />
+                  <label class="form-check-label" for="otherGender">
+                    Female
+                  </label>
+            <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="otherGender"
+                    value="Other"
+                    required="required"
+                  />
+                  <label class="form-check-label" for="otherGender">
+                    Other
+                  </label></div>
+                  <div class="form-outline mb-4">
+                    <input
+                      name="email"
+                      type="email"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      required="required"
+                    />
+                    <label class="form-label" for="form3Example97">
+                      Email ID
+                    </label>
+                  </div>
+                  <button type="submit" onclick="return validateForm()" class="btn btn-success btn-lg ms-2" >Register</button>
+                </form>
+                <div class="text-left d-flex">
+                  <span class="text-muted"> Already member? </span>
+                  <a href="/signin"> Sign in </a>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>

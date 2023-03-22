@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section><h1>Admin Page</h1>
+
+<a class="btn btn-danger m-5" href="/admin/appointment_details">Appointment details</a>
+<a class="btn btn-danger m-5" href="/admin/request_details">Request details</a>
+<a class="btn btn-danger m-5" href="/admin/request_status">Request Status</a><br>
+<a class="btn btn-danger m-5" href="/admin/stock_details">Stock Details</a>
+<a class="btn btn-danger m-5" href="/admin/user_details">User Details</a>
+
+<a class="btn btn-danger m-5" href="/logout">Logout</a>
+
+</section>
+
+
+	
+</body>
+</html>

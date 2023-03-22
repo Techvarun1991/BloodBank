@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)">
+<head>
+<meta charset="ISO-8859-1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<title>Insert title here</title>
+<style type="text/css">.inner-title {
+  padding: 20px;
+  padding-left: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #ccccccc4;
+  display: block;
+  padding-right: 0px; }
+  .inner-title h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #863dd9;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    width: 300px; }
+  .inner-title p {
+    width: 100%;
+    text-align: center; }
+  .inner-title .btn {
+    float: right;
+    margin-top: -38px;
+    font-weight: 600;
+    font-size: .8rem; }
+
+.page-nav {
+  padding: 40px;
+  text-align: center;
+  padding-top: 160px; }
+  .page-nav ul {
+    float: none;
+    margin: auto; }
+  @media screen and (max-width: 576px) {
+    .page-nav {
+      padding-top: 186px; } }
+  @media screen and (max-width: 356px) {
+    .page-nav {
+      padding-top: 206px; } }
+  .page-nav h2 {
+    font-size: 36px;
+    width: 100%;
+    color: #444; }
+    @media screen and (max-width: 600px) {
+      .page-nav h2 {
+        font-size: 26px; } }
+  .page-nav ul li {
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 16px; }
+    .page-nav ul li i {
+      width: 30px;
+      text-align: center;
+      color: #444; }
+    .page-nav ul li a {
+      color: #444; }
+
+.btn-success {
+  background-color: #de1f26;
+  border-color: #de1f26; }
+  .btn-success:hover {
+    background-color: #de1f26 !important;
+    border-color: #de1f26 !important; }
+  .btn-success:active {
+    background-color: #de1f26 !important;
+    border-color: #de1f26 !important; }
+  .btn-success:focus {
+    background-color: #de1f26 !important;
+    border-color: #de1f26 !important;
+    box-shadow: none !important; }
+
+.btn-primary {
+  background-color: #de1f26;
+  border-color: #de1f26; }
+  .btn-primary:hover {
+    background-color: #de1f26 !important;
+    border-color: #de1f26 !important; }
+  .btn-primary:active {
+    background-color: #de1f26 !important;
+    border-color: #de1f26 !important; }
+  .btn-primary:focus {
+    background-color: #de1f26 !important;
+    border-color: #de1f26 !important;
+    box-shadow: none !important; }
+
+.btn {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px; }
+
+.form-control:focus {
+  box-shadow: none !important;
+  border: 2px solid  #863dd9; }
+
+.btn-light {
+  background-color: #FFF;
+  color: #3F3F3F; }
+
+.collapse.show {
+  display: block !important; }
+
+.form-control:focus {
+  box-shadow: none;
+  border: 2px solid #863dd9 !important; }
+
+.form-control {
+  background-color: #F8F8F8;
+  margin-bottom: 20px; }
+  .form-control:focus {
+    background-color: #FFF;
+    border-color: #CCC; }
+
+.container {
+  max-width: 1170px; }
+  @media screen and (max-width: 575px) {
+    .container {
+      padding: 10px 15px; } }
+
+html {
+  scroll-behavior: smooth; }
+
+header {
+	margin-bottom: 10vh;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+  }
+  header .header-top {
+    background-color: #de1f26; }
+    header .header-top .col-det .ulleft li {
+      float: left;
+      padding: 11px;
+      color: #FFF;
+      font-size: 1rem;
+      font-weight: 400; }
+      header .header-top .col-det .ulleft li i {
+        margin-right: 5px; }
+      header .header-top .col-det .ulleft li span {
+        margin-left: 15px; }
+    header .header-top .col-det .ulright {
+      float: right; }
+      header .header-top .col-det .ulright li {
+        float: left;
+        padding: 11px;
+        color: #FFF;
+        font-size: 1rem; }
+        header .header-top .col-det .ulright li i {
+          margin-right: 5px; }
+        header .header-top .col-det .ulright li span {
+          margin-left: 15px; }
+  header .header-bottom {
+    background-color: #FFF; }
+    header .header-bottom .navbar {
+      float: right; }
+      @media screen and (max-width: 991px) {
+        header .header-bottom .navbar {
+          width: 100%; } }
+    header .header-bottom img {
+      margin-top: 15px; }
+      @media screen and (max-width: 991px) {
+        header .header-bottom img {
+          padding: 5px;
+          margin-top: 0px;
+          max-width: 230px; } }
+  header .nav-col .navbar-nav li {
+    padding: 14px 20px;
+    font-weight: 600; }
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    padding: 0px; } }
+
+.navbar-toggler {
+  position: absolute;
+  right: 0px;
+  top: 19px; }
+  @media screen and (max-width: 767px) {
+    .navbar-toggler {
+      top: -50px; } }
+
+.scroll-to-fixed-fixed {
+  background-color: #FFF;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+/* ===================================== Donation Process CSS ================================== */
+.donation-care {
+  padding: 50px;
+  background-color: #FFF; }
+  @media screen and (max-width: 940px) {
+    .donation-care {
+      padding: 30px 10px; } }
+  .donation-care h4 {
+    padding: 10px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+    font-weight: 600; }
+  .donation-care p {
+    padding: 10px;
+    padding-top: 0px;
+    text-align: justify;
+    font-size: .85rem; }
+  .donation-care i {
+    font-size: 13px;
+    margin-left: 10px; }
+  .donation-care .vd {
+    margin-bottom: 20px; }
+  .donation-care .bkjiu {
+    background-color: #F8F9FA;
+    padding: 5px; }
+    .donation-care .bkjiu .btn {
+      margin-bottom: 6px;
+      margin-left: 6px; }
+
+@media screen and (max-width: 940px) {
+  .health-care {
+    padding: 50px 10px; } }
+/* ===================================== About US CSS ================================== */
+.about-us {
+  padding: 50px;
+  background-color: #FFF; }
+  @media screen and (max-width: 940px) {
+    .about-us {
+      padding: 30px 10px; } }
+  .about-us .text p {
+    font-weight: 300;
+    font-size: .85rem;
+    color: #000;
+    margin-bottom: 10px;
+    text-align: justify; }
+  .about-us .image img {
+    margin-top: 30px; }
+
+/* ===================================== About US CSS ================================== */
+footer {
+  background: #de1f26;
+  padding: 50px !important;
+  padding: 50px;
+  margin-top: 20vh;
+  padding-bottom: 32px !important; }
+  @media screen and (max-width: 940px) {
+    footer {
+      padding: 30px 10px; } }
+  @media screen and (max-width: 600px) {
+    footer {
+      padding-bottom: 0px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important; } }
+  @media screen and (max-width: 991px) {
+    footer {
+      padding-bottom: 50px !important; } }
+  footer .content-ro {
+    color: #FFF;
+    margin-top: 20px; }
+    footer .content-ro h2 {
+      font-size: 1.3rem;
+      font-weight: 600; }
+    footer .content-ro .footer-contact .address-row {
+      display: flex;
+      margin-top: 10px; }
+      footer .content-ro .footer-contact .address-row .icon {
+        padding: 15px; }
+      footer .content-ro .footer-contact .address-row .detail p {
+        font-weight: 300; }
+    footer .content-ro .footer-links ul {
+      margin-bottom: 15px; }
+      footer .content-ro .footer-links ul li {
+        float: left;
+        width: 50%;
+        font-weight: 300; }
+    footer .content-ro .form-card {
+      margin-top: -138px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      background-color: #fff; }
+      @media screen and (max-width: 600px) {
+        footer .content-ro .form-card {
+          margin-top: 10px; } }
+      footer .content-ro .form-card .form-title {
+        padding: 20px;
+        background-color: #f9f9f9; }
+        footer .content-ro .form-card .form-title h4 {
+          margin-bottom: 0px;
+          font-weight: 600;
+          color: #444;
+          text-align: center; }
+      footer .content-ro .form-card .form-body {
+        padding: 20px;
+        }
+        footer .content-ro .form-card .form-body input {
+          border-radius: 0px;
+          height: 47px; }
+  footer .footer-copy {
+    padding: 30px 0px;
+    color: #FFF;
+    margin-top: 35px;
+    border-top: 1px solid #fd8c90;
+    padding-bottom: 0px; }
+    footer .footer-copy a {
+      color: #ccc; }
+    @media screen and (max-width: 991px) {
+      footer .footer-copy .socila-link {
+        margin-top: 20px; } }
+    footer .footer-copy .socila-link ul {
+      float: right; }
+      footer .footer-copy .socila-link ul li {
+        float: left;
+        padding: 0px 20px; }
+        footer .footer-copy .socila-link ul li a {
+          color: #fff; }
+
+.footer-bot-image img {
+  position: absolute;
+  margin-top: -112px; }
+/*# sourceMappingURL=style.css.map */</style>
+</head>
+<body>
+	<header class="continer-fluid">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row col-det">
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <ul class="ulleft">
+                                <li>
+                                    <i class="far fa-envelope"></i>
+                                    sales@smarteyeapps.com
+                                    <span>|</span></li>
+                                <li>
+                                    <i class="far fa-clock"></i>
+                                    Service Time : 12:AM</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <ul class="ulright">
+                                <li>
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    Upload Video
+                                    <span>|</span></li>
+                                <li>
+                                    <a href="/signin" ><button type="submit" class="btn btn-danger">
+                                    Login</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-jk" class="header-bottom">
+                <div class="container">
+                    <div class="row nav-row">
+                        <div class="col-md-3 logo">
+                            <img src="assets/images/logo.jpg" alt="">
+                        </div>
+                        <div class="col-md-9 nav-col">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+
+                                <button
+                                    class="navbar-toggler"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#navbarNav"
+                                    aria-controls="navbarNav"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="#">Home
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#about">About Us</a>
+                                        </li>
+                                       
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#gallery">Gallery</a>
+                                        </li>
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="#process">Process</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#blog">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#contact">Contact US</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+	<div th:replace="${content}"></div>
+	<footer id="contact" class="container-fluid mt-10">
+        <div class="container">
+            
+            <div class="row content-ro">
+                <div class="col-lg-4 col-md-12 footer-contact">
+                    <h2>Contact Informatins</h2>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail">
+                            <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="detail">
+                            <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="detail">
+                            <p>+91 9751791203 <br> +91 9159669599</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-links">
+                   <div class="row no-margin mt-2">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li>Contacts</li>
+                        <li>Pricing</li>
+                        <li>Gallery</li>
+                        <li>eatures</li>
+
+                    </ul>
+                    </div>
+                   <div class="row no-margin mt-1">
+                       <h2 class="m-t-2">More Products</h2>
+                     <ul>
+                        <li>Forum PHP Script</li>
+                        <li>Edu Smart</li>
+                        <li>Smart Event</li>
+                        <li>Smart School</li>
+
+
+                    </ul>
+                   </div>
+
+                </div>
+                
+            </div>
+            <div class="footer-copy">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <p>Copyright © <a href="#">Smarteyeapps.com</a> | All right reserved.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 socila-link">
+                        <ul>
+                            <li><a><i class="fab fa-github"></i></a></li>
+                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a><i class="fab fa-twitter"></i></a></li>
+                            <li><a><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
